@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Nvm\Banner\Api\NvmBannerRepositoryInterface" type="Nvm\Banner\Model\BannerRepository"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="banner_listing_data_source" xsi:type="string">ListingBannerCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="ListingBannerCollection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">nvm_banner</argument>
+            <argument name="resourceModel" xsi:type="string">Nvm\Banner\Model\ResourceModel\Banner</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Nvm\Banner\BannerImageUpload" type="Nvm\Banner\Helper\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">banner/tmp/images</argument>
+            <argument name="basePath" xsi:type="string">banner/images</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+            <argument name="allowedMimeTypes" xsi:type="array">
+                <item name="jpg" xsi:type="string">image/jpg</item>
+                <item name="jpeg" xsi:type="string">image/jpeg</item>
+                <item name="gif" xsi:type="string">image/gif</item>
+                <item name="png" xsi:type="string">image/png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Nvm\Banner\Controller\Adminhtml\Banner\Image\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Nvm\Banner\BannerImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Nvm\Banner\Controller\Adminhtml\Banner\Save">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Nvm\Banner\BannerImageUpload</argument>
+        </arguments>
+    </type>
+</config>

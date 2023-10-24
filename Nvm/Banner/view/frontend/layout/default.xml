@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Nvm_Banner::css/banner.css"/>
+        <script src="Nvm_Banner::js/banner.js"/>
+    </head>
+    <body>
+        <referenceContainer name="main.content">
+            <block class="Nvm\Banner\Block\Header" name="skip_to_content.target" before="-"
+                   template="Nvm_Banner::bannerHeader.phtml"/>
+            <block class="Nvm\Banner\Block\Footer" name="above_footer" after="-"
+                   template="Nvm_Banner::bannerFooter.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

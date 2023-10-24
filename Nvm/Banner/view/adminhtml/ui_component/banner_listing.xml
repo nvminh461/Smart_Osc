@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">banner_listing.banner_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New Banner</label>
+            </button>
+        </buttons>
+        <spinner>banner_columns</spinner>
+        <deps>
+            <dep>banner_listing.banner_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="banner_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">banner_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="Nvm\Banner\Ui\Component\DataProvider"
+                      name="banner_listing_data_source">
+            <settings>
+                <requestFieldName>banner_id</requestFieldName>
+                <primaryFieldName>banner_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <massaction name="listing_massaction">
+            <action name="delete">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure you want to delete selected items?</message>
+                        <title translate="true">Delete items</title>
+                    </confirm>
+                    <url path="banner/banner/massDelete"/>
+                    <type>delete</type>
+                    <label translate="true">Delete</label>
+                </settings>
+            </action>
+            <action name="disable">
+                <settings>
+                    <url path="banner/banner/massDisable"/>
+                    <type>disable</type>
+                    <label translate="true">Disable</label>
+                </settings>
+            </action>
+            <action name="enable">
+                <settings>
+                    <url path="banner/banner/massEnable"/>
+                    <type>enable</type>
+                    <label translate="true">Enable</label>
+                </settings>
+            </action>
+        </massaction>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="banner_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>banner_id</indexField>
+                <resizeEnabled>true</resizeEnabled>
+                <resizeDefaultWidth>55</resizeDefaultWidth>
+            </settings>
+        </selectionsColumn>
+        <column name="banner_id" sortOrder="5">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+                <resizeEnabled>true</resizeEnabled>
+            </settings>
+        </column>
+        <column name="thumbnail" class="Nvm\Banner\Ui\Component\Listing\Column\Thumbnail"
+                component="Magento_Ui/js/grid/columns/thumbnail" sortOrder="10">
+            <settings>
+                <altField>name</altField>
+                <hasPreview>true</hasPreview>
+                <label translate="true">THUMBNAIL</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="banner_name" sortOrder="15">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">NAME</label>
+            </settings>
+        </column>
+        <column name="banner_image" sortOrder="20">
+            <settings>
+                <label translate="true">IMAGE</label>
+                <visible>true</visible>
+            </settings>
+        </column>
+        <column name="banner_describe" sortOrder="25">
+            <settings>
+                <label translate="true">DESCRIBE</label>
+                <visible>true</visible>
+            </settings>
+        </column>
+        <column name="banner_position" component="Magento_Ui/js/grid/columns/select" sortOrder="30">
+            <settings>
+                <options class="Nvm\Banner\Model\Source\Position"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">POSITION</label>
+            </settings>
+        </column>
+        <column name="status" component="Magento_Ui/js/grid/columns/select" sortOrder="35">
+            <settings>
+                <options class="Nvm\Banner\Model\Source\Status"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">STATUS</label>
+            </settings>
+        </column>
+        <column name="editor" sortOrder="40">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">BANNER EDITOR</label>
+            </settings>
+        </column>
+        <column name="updated_at" sortOrder="40">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">MODIFIED TIME</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Nvm\Banner\Ui\Component\Listing\Column\BannerActions">
+            <settings>
+                <indexField>banner_id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+                <resizeDefaultWidth>107</resizeDefaultWidth>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>
+

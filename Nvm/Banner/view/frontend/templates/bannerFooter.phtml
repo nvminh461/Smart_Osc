@@ -1,0 +1,16 @@
+<?php
+/** @var Nvm\Banner\Block\Footer $block */
+$data = $block->viewFooter();
+?>
+<div class="slideshow-container">
+    <?php foreach ($data as $item) : ?>
+        <div class="mySlides1">
+            <img src="<?php echo $block->getImage($item['banner_image']) ?>"
+                 style="width:100%; height: 150px "
+                 alt="<?php echo $block->getImage($item['banner_name']) ?>">
+        </div>
+    <?php endforeach; ?>
+
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+</div>

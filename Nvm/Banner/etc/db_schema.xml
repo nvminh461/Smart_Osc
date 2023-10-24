@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="nvm_banner" resource="default" engine="innodb" comment="Banner Table For Module Nvm Banner">
+        <column xsi:type="int" name="banner_id" unsigned="true" nullable="false" comment="Banner ID"
+                identity="true"/>
+        <column xsi:type="varchar" name="banner_name" nullable="false" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="banner_image" nullable="false" length="255" comment="Image"/>
+        <column xsi:type="varchar" name="banner_describe" nullable="true" length="255" comment="Describe"/>
+        <column xsi:type="int" name="banner_position" nullable="false" default="1" comment="Position"/>
+        <column xsi:type="smallint" name="status" nullable="false" default="1" comment="Status"/>
+        <column xsi:type="varchar" name="editor" nullable="true" length="255" comment="Editor"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" on_update="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" on_update="true" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="banner_id"/>
+        </constraint>
+    </table>
+</schema>

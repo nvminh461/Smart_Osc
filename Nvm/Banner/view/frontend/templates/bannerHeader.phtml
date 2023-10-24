@@ -1,0 +1,19 @@
+<?php
+/** @var Nvm\Banner\Block\Header $block */
+$dataHeader = $block->viewHeader();
+?>
+
+<div class="slideshow-container">
+    <?php foreach ($dataHeader as $itemHeader) : ?>
+        <div class="mySlides2">
+            <img src="<?php echo $block->getImage($itemHeader['banner_image']) ?>"
+                 style="width:100%; height: 500px"
+                 alt="<?php echo $block->getImage($itemHeader['banner_name']) ?>">
+        </div>
+    <?php endforeach; ?>
+    <a class="prev2">&#10094;</a>
+    <a class="next2">&#10095;</a>
+</div>
+
+
+

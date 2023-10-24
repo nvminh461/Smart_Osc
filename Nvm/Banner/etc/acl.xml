@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::system">
+                    <resource id="Nvm_Banner::banner_manager" title="Banner Manager" >
+                        <resource id="Nvm_Banner::banner_index" title="Extended banner management" />
+                        <resource id="Nvm_Banner::banner_edit" title="Extended banner edit" />
+                        <resource id="Nvm_Banner::banner_delete" title="Extended banner delete" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

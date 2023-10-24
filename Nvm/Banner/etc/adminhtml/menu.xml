@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Nvm_Banner::list_banner" title="Product Banner" parent="Magento_Catalog::catalog" module="Nvm_Banner"
+             action="banner/banner/index" resource="Nvm_Banner::banner_index"/>
+    </menu>
+</config>
