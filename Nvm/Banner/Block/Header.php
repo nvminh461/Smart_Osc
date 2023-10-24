@@ -32,9 +32,9 @@ class Header extends Template
     }
 
     /**
-     * @return mixed
+     * @return array|null
      */
-    public function viewHeader()
+    public function viewHeader(): ?array
     {
         $collection = $this->CollectionFactory->create();
         $collection->addFieldToFilter('status', ['eq' => 1])->addFieldToFilter('banner_position', ['eq' => 1]);
