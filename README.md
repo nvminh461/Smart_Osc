@@ -1,4 +1,8 @@
 # Smart_Osc Extenstion in magento 2
+# Contents.
+- [Installing the Nvm_Banner Module in Magento 2](#installing-the-nvm_banner-module-in-magento-2)
+- [Installing the Nvm_Wholesale Module in Magento 2](#installing-the-nvm_wholesale-module-in-magento-2)
+- [Installing the Nvm_Donation Module in Magento 2](#installing-the-nvm_donation-module-in-magento-2)
 ## Installing the Nvm_Banner Module in Magento 2
 In this guide, we will learn how to install the Nvm_Banner Module in Magento 2 using Git.
 #### Step 1: Navigate to the `app/code` Directory in Magento 2
@@ -31,3 +35,6 @@ php bin/magento setup:static-content:deploy -f
 ```
 This command will generate static files necessary for the Nvm_Banner module and your Magento 2 store to work correctly.
 That's it! You have successfully installed the Nvm_Banner Module in Magento 2. Your store is now ready to utilize the features of this extension.
+
+## Installing the Nvm_Wholesale Module in Magento 2
+## Installing the Nvm_Donation Module in Magento 2
