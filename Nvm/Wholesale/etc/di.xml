@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Nvm\Wholesale\Api\NvmWholesaleRepositoryInterface" type="Nvm\Wholesale\Model\NvmWholesaleRepository"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="contact_listing_data_source" xsi:type="string">
+                    Nvm\Wholesale\Model\ResourceModel\Contact\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Nvm\Wholesale\Model\ResourceModel\Contact\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">nvm_wholesale_contact</argument>
+            <argument name="resourceModel" xsi:type="string">Nvm\Wholesale\Model\ResourceModel\Contact</argument>
+        </arguments>
+    </virtualType>
+</config>

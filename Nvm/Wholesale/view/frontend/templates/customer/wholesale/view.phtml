@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @var View $block
+ * @var SecureHtmlRenderer $secureRenderer
+ * @var Escaper $escaper
+ */
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
+use Nvm\Wholesale\Block\Customer\Wholesale\View;
+
+$product = $block->getProductData();
+?>
+<?php if ($product->getId()): ?>
+    <div class="customer-review view">
+        <div class="product-details">
+            <div class="product-media">
+                <a class="product-photo" href="<?= $block->escapeUrl($product->getProductUrl()) ?>">
+                    <?php /* customer_account_product_review_page */ ?>
+                    <?= $block->getImage($block->getProductData(), 'customer_account_product_review_page')->toHtml() ?>
+                </a>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name"><?= $block->escapeHtml($product->getName()) ?></h2>
+                <b><?= $block->getProductPrice($product) ?></b>
+            </div>
+        </div>
+
+        <div class="wholesale-details">
+            <div class="wholesale-message">
+                <b class="wholesale-message-label"><?= $escaper->escapeHtml(__('Message : ')) ?></b>
+                <span class="wholesale-message-val"><?= $block->escapeHtml($block->getWholesaleData()->getCustomerMessage()) ?></span>
+            </div>
+        </div>
+    </div>
+    <div class="actions-toolbar">
+        <div class="secondary">
+            <a class="action back" href="<?= $block->escapeUrl($block->getBackUrl()) ?>">
+                <span><?= $block->escapeHtml(__('Back to My Products Wholesale')) ?></span>
+            </a>
+        </div>
+    </div>
+<?php endif; ?>

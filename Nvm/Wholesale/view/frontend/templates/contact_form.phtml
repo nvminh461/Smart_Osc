@@ -1,0 +1,80 @@
+<?php
+/**
+ * @var ContactForm $block
+ *
+ */
+
+use Nvm\Wholesale\Block\Frontend\ContactForm;
+
+$currentCustomer = $block->getCurrentCustomer();
+$currentProduct = $block->getCurrentProduct();
+?>
+<?php if ($block->compareAttributes()): ?>
+<h1>Contact Form</h1>
+<div class="mt-5">
+    <form action="<?= $block->getUrl('wholesale/index/saveform') ?>" method="post" id="custom-form">
+        <fieldset class="fieldset">
+            <div class="field required">
+                <label for="customer_name"
+                       class="label"><span><?= $block->escapeHtml(__('Customer Name')) ?></span></label>
+                <div class="control">
+                    <input type="text" name="customer_name" id="customer_name" class="input-text"
+                           data-validate="{required:true}" value="<?php echo $currentCustomer->getName() ?>"/>
+                </div>
+            </div>
+            <div class="field required">
+                <label for="email" class="label"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+                <div class="control">
+                    <input type="email" name="email" id="email" class="input-email" data-validate="{required:true}"
+                           value="<?php echo $currentCustomer->getEmail() ?>"/>
+                </div>
+            </div>
+            <div class="field required">
+                <label for="product_name"
+                       class="label"><span><?= $block->escapeHtml(__('Product Name')) ?></span></label>
+                <div class="control">
+                    <input type="text" name="product_name" id="product_name" class="input-text"
+                           data-validate="{required:true}" value="<?php echo $currentProduct->getName() ?>" readonly/>
+                </div>
+            </div>
+            <div class="field required">
+                <label for="phone_number"
+                       class="label"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
+                <div class="control">
+                    <input type="number" name="phone_number" id="phone_number" data-validate="{required:true}"
+                           value=""/>
+                </div>
+            </div>
+            <div class="field">
+                <label for="message" class="label"><span><?= $block->escapeHtml(__('Message')) ?></span></label>
+                <div class="control">
+                    <textarea name="message" id="message" class="input-textarea"></textarea>
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary actions-primary">
+                <button type="submit" class="action submit primary"><span><?= $block->escapeHtml(__('Submit')) ?></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Hidden field-->
+        <input type="hidden" name="product_id" value="<?= $currentProduct->getId() ?>">
+        <input type="hidden" name="customer_id" value="<?= $currentCustomer->getId() ?>">
+    </form>
+</div>
+<script>
+    document.getElementById('custom-form').addEventListener('submit', function (event) {
+        var customerName = document.getElementById('customer_name').value;
+        var email = document.getElementById('email').value;
+        var productName = document.getElementById('product_name').value;
+        var phoneNumber = document.getElementById('phone_number').value;
+
+        if (customerName.trim() === '' || email.trim() === '' || productName.trim() === '' || phoneNumber.trim() === '') {
+            event.preventDefault();
+            alert('Please complete the information before submitting the form.');
+        }
+    });
+</script>
+<?php endif; ?>

@@ -16,9 +16,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get contact id
-     * @return int
      */
-    public function getContactId(): int
+    public function getContactId()
     {
         return $this->getData(self::CONTACT_ID);
     }
@@ -28,7 +27,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param int $contactId
      * @return $this
      */
-    public function setContactId(int $contactId): NvmWholesaleInterface
+    public function setContactId($contactId): NvmWholesaleInterface
     {
         $this->setData(self::CONTACT_ID, $contactId);
         return $this;
@@ -36,9 +35,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get product id
-     * @return int
      */
-    public function getProductId(): int
+    public function getProductId()
     {
         return $this->getData(self::PRODUCT_ID);
     }
@@ -48,7 +46,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param int $productId
      * @return $this
      */
-    public function setProductId(int $productId): NvmWholesaleInterface
+    public function setProductId($productId): NvmWholesaleInterface
     {
         $this->setData(self::PRODUCT_ID, $productId);
         return $this;
@@ -56,9 +54,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get product name
-     * @return string
      */
-    public function getProductName(): string
+    public function getProductName()
     {
         return $this->getData(self::PRODUCT_NAME);
     }
@@ -68,7 +65,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $productName
      * @return $this
      */
-    public function setProductName(string $productName): NvmWholesaleInterface
+    public function setProductName($productName): NvmWholesaleInterface
     {
         $this->setData(self::PRODUCT_NAME, $productName);
         return $this;
@@ -76,9 +73,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get customer id
-     * @return int
      */
-    public function getCustomerId(): int
+    public function getCustomerId()
     {
         return $this->getData(self::CUSTOMER_ID);
     }
@@ -88,7 +84,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param int $customerId
      * @return $this
      */
-    public function setCustomerId(int $customerId): NvmWholesaleInterface
+    public function setCustomerId($customerId): NvmWholesaleInterface
     {
         $this->setData(self::CUSTOMER_ID, $customerId);
         return $this;
@@ -96,9 +92,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get customer name
-     * @return string
      */
-    public function getCustomerName(): string
+    public function getCustomerName()
     {
         return $this->getData(self::CUSTOMER_NAME);
     }
@@ -108,7 +103,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $customerName
      * @return $this
      */
-    public function setCustomerName(string $customerName): NvmWholesaleInterface
+    public function setCustomerName($customerName): NvmWholesaleInterface
     {
         $this->setData(self::CUSTOMER_NAME, $customerName);
         return $this;
@@ -116,9 +111,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get customer email
-     * @return string
      */
-    public function getCustomerEmail(): string
+    public function getCustomerEmail()
     {
         return $this->getData(self::CUSTOMER_EMAIL);
     }
@@ -128,7 +122,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $customerEmail
      * @return $this
      */
-    public function setCustomerEmail(string $customerEmail): NvmWholesaleInterface
+    public function setCustomerEmail($customerEmail): NvmWholesaleInterface
     {
         $this->setData(self::CUSTOMER_EMAIL, $customerEmail);
         return $this;
@@ -136,9 +130,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get customer phone
-     * @return string
      */
-    public function getCustomerPhone(): string
+    public function getCustomerPhone()
     {
         return $this->getData(self::CUSTOMER_PHONE);
     }
@@ -148,7 +141,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $customerPhone
      * @return $this
      */
-    public function setCustomerPhone(string $customerPhone): NvmWholesaleInterface
+    public function setCustomerPhone($customerPhone): NvmWholesaleInterface
     {
         $this->setData(self::CUSTOMER_PHONE, $customerPhone);
         return $this;
@@ -156,9 +149,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get customer message
-     * @return string
      */
-    public function getCustomerMessage(): string
+    public function getCustomerMessage()
     {
         return $this->getData(self::CUSTOMER_MESSAGE);
     }
@@ -168,7 +160,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $customerMessage
      * @return $this
      */
-    public function setCustomerMessage(string $customerMessage): NvmWholesaleInterface
+    public function setCustomerMessage($customerMessage): NvmWholesaleInterface
     {
         $this->setData(self::CUSTOMER_MESSAGE, $customerMessage);
         return $this;
@@ -178,7 +170,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * Get status
      * @return int
      */
-    public function getStatus(): int
+    public function getStatus()
     {
         return $this->getData(self::STATUS);
     }
@@ -188,7 +180,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param int $status
      * @return $this
      */
-    public function setStatus(int $status): NvmWholesaleInterface
+    public function setStatus($status): NvmWholesaleInterface
     {
         $this->setData(self::STATUS, $status);
         return $this;
@@ -196,9 +188,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get banner editor
-     * @return string
      */
-    public function getEditor(): string
+    public function getEditor()
     {
         return $this->getData(self::EDITOR);
     }
@@ -208,7 +199,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $editor
      * @return $this
      */
-    public function setEditor(string $editor): NvmWholesaleInterface
+    public function setEditor($editor): NvmWholesaleInterface
     {
         $this->setData(self::EDITOR, $editor);
         return $this;
@@ -216,9 +207,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get created_at
-     * @return string
      */
-    public function getCreatedAt(): string
+    public function getCreatedAt()
     {
         return $this->getData(self::CREATED_AT);
     }
@@ -228,7 +218,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $createdAt
      * @return $this
      */
-    public function setCreatedAt(string $createdAt): NvmWholesaleInterface
+    public function setCreatedAt($createdAt): NvmWholesaleInterface
     {
         $this->setData(self::CREATED_AT, $createdAt);
         return $this;
@@ -236,9 +226,8 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
 
     /**
      * Get updated_at
-     * @return string
      */
-    public function getUpdatedAt(): string
+    public function getUpdatedAt()
     {
         return $this->getData(self::UPDATED_AT);
     }
@@ -248,7 +237,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
      * @param string $updatedAt
      * @return $this
      */
-    public function setUpdatedAt(string $updatedAt): NvmWholesaleInterface
+    public function setUpdatedAt($updatedAt): NvmWholesaleInterface
     {
         $this->setData(self::UPDATED_AT, $updatedAt);
         return $this;

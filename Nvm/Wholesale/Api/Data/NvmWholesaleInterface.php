@@ -29,105 +29,96 @@ interface NvmWholesaleInterface
     /**
      * Get Contact Id
      *
-     * @return int
      */
-    public function getContactId(): int;
+    public function getContactId();
 
     /**
      * Set Contact Id
      */
-    public function setContactId(int $contactId): NvmWholesaleInterface;
+    public function setContactId($contactId): NvmWholesaleInterface;
 
     /**
      * Get Product Id
      *
-     * @return int
      */
-    public function getProductId(): int;
+    public function getProductId();
 
     /**
      * Set Product Id
      */
-    public function setProductId(int $productId): NvmWholesaleInterface;
+    public function setProductId($productId): NvmWholesaleInterface;
 
     /**
      * Get Product Name
      *
-     * @return string
      */
-    public function getProductName(): string;
+    public function getProductName();
 
     /**
      * Set Product Name
      */
-    public function setProductName(string $productName): NvmWholesaleInterface;
+    public function setProductName($productName): NvmWholesaleInterface;
 
     /**
      * Get Customer Id
      *
-     * @return int
      */
-    public function getCustomerId(): int;
+    public function getCustomerId();
 
     /**
      * Set Customer Id
      */
-    public function setCustomerId(int $customerId): NvmWholesaleInterface;
+    public function setCustomerId($customerId): NvmWholesaleInterface;
 
     /**
      * Get Customer Name
      *
-     * @return string
      */
-    public function getCustomerName(): string;
+    public function getCustomerName();
 
     /**
      * Set Customer Name
      */
-    public function setCustomerName(string $customerName): NvmWholesaleInterface;
+    public function setCustomerName($customerName): NvmWholesaleInterface;
 
     /**
      * Get Customer Email
      *
-     * @return string
      */
-    public function getCustomerEmail(): string;
+    public function getCustomerEmail();
 
     /**
      * Set Customer Email
      */
-    public function setCustomerEmail(string $customerEmail): NvmWholesaleInterface;
+    public function setCustomerEmail($customerEmail): NvmWholesaleInterface;
 
     /**
      * Get Customer Phone
      *
-     * @return string
      */
-    public function getCustomerPhone(): string;
+    public function getCustomerPhone();
 
     /**
      * Set Customer Phone
      */
-    public function setCustomerPhone(string $customerPhone): NvmWholesaleInterface;
+    public function setCustomerPhone($customerPhone): NvmWholesaleInterface;
 
     /**
      * Get Customer Message
      *
-     * @return string
      */
-    public function getCustomerMessage(): string;
+    public function getCustomerMessage();
 
     /**
      * Set Customer Message
      */
-    public function setCustomerMessage(string $customerMessage): NvmWholesaleInterface;
+    public function setCustomerMessage($customerMessage): NvmWholesaleInterface;
 
     /**
      * Get Status
      *
-     * @return int
      */
-    public function getStatus(): int;
+    public function getStatus();
 
     /**
      * Set Status
@@ -135,14 +126,13 @@ interface NvmWholesaleInterface
      * @param int $status
      * @return NvmWholesaleInterface
      */
-    public function setStatus(int $status): NvmWholesaleInterface;
+    public function setStatus($status): NvmWholesaleInterface;
 
     /**
      * Get Editor
      *
-     * @return string|null
      */
-    public function getEditor(): ?string;
+    public function getEditor();
 
     /**
      * Set Editor
@@ -150,14 +140,13 @@ interface NvmWholesaleInterface
      * @param string $editor
      * @return NvmWholesaleInterface
      */
-    public function setEditor(string $editor): NvmWholesaleInterface;
+    public function setEditor($editor): NvmWholesaleInterface;
 
     /**
      * Get Created At
      *
-     * @return string
      */
-    public function getCreatedAt(): string;
+    public function getCreatedAt();
 
     /**
      * Set Created At
@@ -165,14 +154,13 @@ interface NvmWholesaleInterface
      * @param string $createdAt
      * @return NvmWholesaleInterface
      */
-    public function setCreatedAt(string $createdAt): NvmWholesaleInterface;
+    public function setCreatedAt($createdAt): NvmWholesaleInterface;
 
     /**
      * Get Updated At
      *
-     * @return string
      */
-    public function getUpdatedAt(): string;
+    public function getUpdatedAt();
 
     /**
      * Set Updated At
@@ -180,5 +168,5 @@ interface NvmWholesaleInterface
      * @param string $updatedAt
      * @return NvmWholesaleInterface
      */
-    public function setUpdatedAt(string $updatedAt): NvmWholesaleInterface;
+    public function setUpdatedAt($updatedAt): NvmWholesaleInterface;
 }

@@ -73,10 +73,10 @@ class NvmWholesaleRepository implements NvmWholesaleRepositoryInterface
 
     /**
      * Get Contact by id
-     * @param int $contactId
+     * @param $contactId
      * @return NvmWholesaleInterface
      */
-    public function get(int $contactId): NvmWholesaleInterface
+    public function get($contactId): NvmWholesaleInterface
     {
         $contact = $this->contactFactory->create();
         $this->contactResource->load($contact, $contactId);
