@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="nvm_wholesale_contact" resource="default" engine="innodb" comment="Wholesale Contacts">
+        <column xsi:type="int" name="contact_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Contact ID"/>
+        <column xsi:type="int" name="product_id" nullable="false" comment="Product ID"/>
+        <column xsi:type="varchar" name="product_name" nullable="false" length="255" comment="Product Name"/>
+        <column xsi:type="int" name="customer_id" nullable="false" comment="Customer ID"/>
+        <column xsi:type="varchar" name="customer_name" nullable="false" length="255" comment="Customer Name"/>
+        <column xsi:type="varchar" name="customer_email" nullable="false" length="255" comment="Customer Email"/>
+        <column xsi:type="varchar" name="customer_phone" nullable="false" length="255" comment="Phone"/>
+        <column xsi:type="text" name="customer_message" nullable="true" comment="Message"/>
+        <column xsi:type="int" name="status" nullable="false" comment="Status send mail"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" on_update="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="varchar" name="editor" nullable="true" length="255" comment="Editor"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" on_update="true" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="contact_id"/>
+        </constraint>
+    </table>
+</schema>
