@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">contact_form.contact_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Contact Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="cancel" class="Nvm\Wholesale\Block\Adminhtml\Contact\View\BackButton"/>
+            <button name="sendMail" class="Nvm\Wholesale\Block\Adminhtml\Contact\View\SendMail"/>
+        </buttons>
+        <namespace>contact_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>contact_form.contact_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="contact_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <dataProvider class="Nvm\Wholesale\Model\Contact\DataProvider" name="contact_form_data_source">
+            <settings>
+                <requestFieldName>contact_id</requestFieldName>
+                <primaryFieldName>contact_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="contact_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">contact</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>contact_id</dataScope>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="customer_name" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">contact</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Customer name:</label>
+                <dataScope>customer_name</dataScope>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="customer_email" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">contact</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Customer email:</label>
+                <dataScope>customer_email</dataScope>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="product_name" sortOrder="30" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">contact</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Product name:</label>
+                <dataScope>product_name</dataScope>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="customer_phone" sortOrder="40" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">contact</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Phone:</label>
+                <dataScope>customer_phone</dataScope>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="customer_message" sortOrder="50" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">contact</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Message:</label>
+                <dataScope>customer_message</dataScope>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+    </fieldset>
+</form>
