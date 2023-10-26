@@ -11,7 +11,6 @@ class Index extends CustomerController
     /**
      * Render my product wholesale
      *
-     * @return Page
      */
     public function execute()
     {

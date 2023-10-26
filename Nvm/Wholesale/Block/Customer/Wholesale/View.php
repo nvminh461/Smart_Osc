@@ -5,13 +5,12 @@ declare(strict_types=1);
 namespace Nvm\Wholesale\Block\Customer\Wholesale;
 
 use Magento\Catalog\Api\ProductRepositoryInterface;
+use Magento\Catalog\Block\Product\AbstractProduct;
 use Magento\Catalog\Block\Product\Context;
-use Magento\Catalog\Model\Product;
 use Magento\Customer\Helper\Session\CurrentCustomer;
-use Nvm\Wholesale\Model\Contact;
 use Nvm\Wholesale\Model\ContactFactory;
 
-class View extends \Magento\Catalog\Block\Product\AbstractProduct
+class View extends AbstractProduct
 {
     /**
      * Customer view template name
@@ -25,19 +24,19 @@ class View extends \Magento\Catalog\Block\Product\AbstractProduct
      *
      * @var ProductRepositoryInterface
      */
-    protected $productRepository;
+    protected ProductRepositoryInterface $productRepository;
 
     /**
      * Review model
      *
      * @var ContactFactory
      */
-    protected $_wholesaleFactory;
+    protected ContactFactory $_wholesaleFactory;
 
     /**
      * @var CurrentCustomer
      */
-    protected $currentCustomer;
+    protected CurrentCustomer $currentCustomer;
 
     /**
      * @param Context $context

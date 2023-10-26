@@ -6,7 +6,6 @@ use Magento\Customer\Model\Session as CustomerSession;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\Result\Forward;
 use Magento\Framework\Controller\ResultFactory;
-use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Review\Controller\Customer as CustomerController;
 use Magento\Review\Model\ReviewFactory;
@@ -28,8 +27,7 @@ class View extends CustomerController
         Context         $context,
         CustomerSession $customerSession,
         ContactFactory  $wholesaleFactory
-    )
-    {
+    ) {
         $this->wholesaleFactory = $wholesaleFactory;
         parent::__construct($context, $customerSession);
     }
@@ -37,7 +35,6 @@ class View extends CustomerController
     /**
      * Render review details
      *
-     * @return ResultInterface
      */
     public function execute()
     {

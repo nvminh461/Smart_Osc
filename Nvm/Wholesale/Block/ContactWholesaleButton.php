@@ -94,18 +94,15 @@ class ContactWholesaleButton extends Template
     /**
      * Get the id of the product
      *
-     * @return int|null
      */
     public function getIdProduct()
     {
-        $productId = $this->productViewBlock->getProduct()->getId();
-        return $productId;
+        return $this->productViewBlock->getProduct()->getId();
     }
 
     /**
      * Check the wholesale attribute of the customer
      *
-     * @return int
      */
     public function checkAttributeCustomer()
     {
@@ -120,7 +117,6 @@ class ContactWholesaleButton extends Template
     /**
      * Check the wholesale attribute of the product
      *
-     * @return int|null
      */
     public function checkAttributeProduct()
     {
@@ -137,7 +133,6 @@ class ContactWholesaleButton extends Template
     /**
      * Compare the wholesale attributes of the customer and product
      *
-     * @return bool
      */
     public function compareAttributes()
     {

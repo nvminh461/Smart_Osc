@@ -8,8 +8,10 @@ use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Catalog\Model\Product;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\CustomerRepositoryInterface;
+use Magento\Customer\Block\Account\Dashboard;
 use Magento\Customer\Helper\Session\CurrentCustomer;
 use Magento\Customer\Model\Session;
+use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Element\AbstractBlock;
 use Magento\Framework\View\Element\Template\Context;
@@ -18,7 +20,7 @@ use Nvm\Wholesale\Model\Contact;
 use Nvm\Wholesale\Model\ResourceModel\Contact\Collection;
 use Nvm\Wholesale\Model\ResourceModel\Contact\CollectionFactory;
 
-class ListProduct extends \Magento\Customer\Block\Account\Dashboard
+class ListProduct extends Dashboard
 {
     /**
      * Contact wholesale collection
@@ -94,7 +96,6 @@ class ListProduct extends \Magento\Customer\Block\Account\Dashboard
     /**
      * Initializes toolbar
      *
-     * @return AbstractBlock
      */
     protected function _prepareLayout()
     {
@@ -132,8 +133,6 @@ class ListProduct extends \Magento\Customer\Block\Account\Dashboard
     /**
      * Get Wholesale URL
      *
-     * @param Contact $wholesale
-     * @return string
      */
     public function getWholesaleUrl($wholesale)
     {
@@ -143,7 +142,6 @@ class ListProduct extends \Magento\Customer\Block\Account\Dashboard
     /**
      * Get product data
      *
-     * @return Product
      * @throws NoSuchEntityException
      */
     public function getProductData($wholesale)

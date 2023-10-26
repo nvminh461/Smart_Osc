@@ -6,7 +6,6 @@ use Magento\Customer\Model\Session;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\RequestInterface;
-use Magento\Framework\App\ResponseInterface;
 
 abstract class Customer extends Action
 {
@@ -32,8 +31,6 @@ abstract class Customer extends Action
     /**
      * Check customer authentication for some actions
      *
-     * @param RequestInterface $request
-     * @return ResponseInterface
      */
     public function dispatch(RequestInterface $request)
     {

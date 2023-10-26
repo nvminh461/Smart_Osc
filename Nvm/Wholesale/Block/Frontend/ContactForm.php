@@ -80,7 +80,6 @@ class ContactForm extends Template
     }
 
     /**
-     * @return ProductInterface|mixed|string|null
      * @throws NoSuchEntityException
      */
     public function getCurrentProduct()
@@ -104,7 +103,6 @@ class ContactForm extends Template
     /**
      * Compare the wholesale attributes of the customer and product
      *
-     * @return bool
      */
     public function compareAttributes()
     {
