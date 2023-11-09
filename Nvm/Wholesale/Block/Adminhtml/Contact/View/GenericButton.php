@@ -28,19 +28,6 @@ class GenericButton
     }
 
     /**
-     * Get the contract ID from the request parameters
-     *
-     */
-    public function getContactId()
-    {
-        $contractId = $this->context->getRequest()->getParam('contact_id');
-        if ($contractId) {
-            return $contractId;
-        }
-        return null;
-    }
-
-    /**
      * Get the URL for the given route and parameters
      *
      */
