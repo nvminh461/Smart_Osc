@@ -23,20 +23,26 @@ $product = $block->getProductData();
             </div>
             <div class="product-info">
                 <h2 class="product-name"><?= $block->escapeHtml($product->getName()) ?></h2>
-                <b><?= $block->getProductPrice($product) ?></b>
+                <b style="color: red"><?= $block->getProductPrice($product) ?></b>
             </div>
         </div>
 
-        <div class="wholesale-details">
+        <div class="wholesale-details" style="margin-bottom: 15px">
             <div class="wholesale-message">
-                <b class="wholesale-message-label"><?= $escaper->escapeHtml(__('Message : ')) ?></b>
+                <b class="wholesale-message-label" style="color: blue"><?= $escaper->escapeHtml(__('Message : ')) ?></b>
                 <span class="wholesale-message-val"><?= $block->escapeHtml($block->getWholesaleData()->getCustomerMessage()) ?></span>
             </div>
         </div>
+        <div class="admin-details" style="margin-bottom: 15px">
+            <div class="admin-message">
+                <b class="admin-message-label" style="color: green"><?= $escaper->escapeHtml(__('Message by seller : ')) ?></b>
+                <span class="admin-message-val"><?= $block->escapeHtml($block->getWholesaleData()->getAdminMessage()) ?></span>
+            </div>
+        </div>
     </div>
-    <div class="actions-toolbar">
+    <div class="actions-toolbar" style="text-align: end">
         <div class="secondary">
-            <a class="action back" href="<?= $block->escapeUrl($block->getBackUrl()) ?>">
+            <a class="action" href="<?= $block->escapeUrl($block->getBackUrl()) ?>">
                 <span><?= $block->escapeHtml(__('Back to My Products Wholesale')) ?></span>
             </a>
         </div>

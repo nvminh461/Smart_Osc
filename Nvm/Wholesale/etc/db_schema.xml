@@ -15,6 +15,7 @@
         <column xsi:type="timestamp" name="created_at" nullable="false" on_update="false" default="CURRENT_TIMESTAMP"
                 comment="Created At"/>
         <column xsi:type="varchar" name="editor" nullable="true" length="255" comment="Editor"/>
+        <column xsi:type="text" name="admin_message" nullable="true" comment="Message by admin"/>
         <column xsi:type="timestamp" name="updated_at" nullable="false" on_update="true" default="CURRENT_TIMESTAMP"
                 comment="Updated At"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">

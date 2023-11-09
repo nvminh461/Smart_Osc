@@ -73,13 +73,19 @@
                 <label translate="true">Message</label>
             </settings>
         </column>
-        <column name="editor" sortOrder="35">
+        <column name="editor" sortOrder="40">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Sent By Username</label>
             </settings>
         </column>
-        <column name="status" component="Magento_Ui/js/grid/columns/select" sortOrder="40">
+        <column name="admin_message" sortOrder="41">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Message By Seller</label>
+            </settings>
+        </column>
+        <column name="status" component="Mageplaza_Smtp/js/grid/columns/status" sortOrder="45">
             <settings>
                 <options>
                     <option name="inactive" xsi:type="array">
@@ -94,6 +100,12 @@
                 <filter>select</filter>
                 <dataType>select</dataType>
                 <label translate="true">Status</label>
+            </settings>
+        </column>
+        <column name="updated_at" sortOrder="50">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Updated At</label>
             </settings>
         </column>
         <actionsColumn name="actions" class="Nvm\Wholesale\Ui\Component\Listing\Column\ContactActions">

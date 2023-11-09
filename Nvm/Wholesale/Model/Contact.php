@@ -187,7 +187,7 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
     }
 
     /**
-     * Get banner editor
+     * Get editor
      */
     public function getEditor()
     {
@@ -195,13 +195,32 @@ class Contact extends AbstractModel implements NvmWholesaleInterface
     }
 
     /**
-     * Set is_delete
+     * Set editor
      * @param string $editor
      * @return $this
      */
     public function setEditor($editor): NvmWholesaleInterface
     {
         $this->setData(self::EDITOR, $editor);
+        return $this;
+    }
+
+    /**
+     * Get Admin message
+     */
+    public function getAdminMess()
+    {
+        return $this->getData(self::ADMINMESSAGE);
+    }
+
+    /**
+     * Set Admin message
+     * @param string $adminMess
+     * @return $this
+     */
+    public function setAdminMess($adminMess): NvmWholesaleInterface
+    {
+        $this->setData(self::ADMINMESSAGE, $adminMess);
         return $this;
     }
 

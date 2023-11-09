@@ -25,7 +25,7 @@ interface NvmWholesaleRepositoryInterface
      * @param $contactId
      * @return NvmWholesaleInterface
      */
-    public function get( $contactId): NvmWholesaleInterface;
+    public function get($contactId): NvmWholesaleInterface;
 
     /**
      * Delete entity by id

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Nvm\Wholesale\Model\Contact;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
-use Magento\Store\Model\StoreManagerInterface;
+use Magento\Framework\App\RequestInterface;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use Nvm\Wholesale\Model\ResourceModel\Contact\Collection;
 use Nvm\Wholesale\Model\ResourceModel\Contact\CollectionFactory;
@@ -22,18 +22,24 @@ class DataProvider extends AbstractDataProvider
      */
     protected DataPersistorInterface $dataPersistor;
 
+    /**
+     * @var RequestInterface
+     */
+    protected RequestInterface $request;
     protected $loadedData;
 
     public function __construct(
         $name,
         $primaryFieldName,
         $requestFieldName,
+        RequestInterface $request,
         CollectionFactory $contactCollectionFactory,
         DataPersistorInterface $dataPersistor,
         array $meta = [],
         array $data = []
     ) {
         $this->collection = $contactCollectionFactory->create();
+        $this->request = $request;
         $this->dataPersistor = $dataPersistor;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
         $this->meta = $this->prepareMeta($this->meta);
@@ -71,5 +77,17 @@ class DataProvider extends AbstractDataProvider
         }
 
         return $this->loadedData;
+    }
+
+    public function getMeta()
+    {
+        $meta = parent::getMeta();
+        $requestId = $this->request->getParam($this->requestFieldName);
+        $status = $this->getData()[$requestId]['status'];
+        if (isset($status) && $status == 1) {
+            $meta['general']['children']['admin_message']['arguments']['data']['config']['disabled'] = true;
+        }
+
+        return $meta;
     }
 }

@@ -11,7 +11,11 @@
     <settings>
         <buttons>
             <button name="cancel" class="Nvm\Wholesale\Block\Adminhtml\Contact\View\BackButton"/>
-            <button name="sendMail" class="Nvm\Wholesale\Block\Adminhtml\Contact\View\SendMail"/>
+            <button name="save" class="string">
+                <label translate="false">SendMail</label>
+                <class>save primary</class>
+                <url path="*/*/sendmail"/>
+            </button>
         </buttons>
         <namespace>contact_form</namespace>
         <dataScope>data</dataScope>
@@ -25,6 +29,9 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <submitUrl path="nvm_wholesale/contact/sendmail"/>
+        </settings>
         <dataProvider class="Nvm\Wholesale\Model\Contact\DataProvider" name="contact_form_data_source">
             <settings>
                 <requestFieldName>contact_id</requestFieldName>
@@ -127,6 +134,21 @@
                 <label translate="true">Message:</label>
                 <dataScope>customer_message</dataScope>
                 <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="admin_message" sortOrder="55" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">contact</item>
+                </item>
+            </argument>
+            <settings>
+                <additionalClasses>
+                    <class name="admin_message">true</class>
+                </additionalClasses>
+                <dataType>text</dataType>
+                <label translate="true">Message by seller:</label>
+                <dataScope>admin_message</dataScope>
             </settings>
         </field>
     </fieldset>

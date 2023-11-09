@@ -26,6 +26,7 @@ use Nvm\Wholesale\Block\Customer\Wholesale\ListProduct;
                 <th scope="col" class="col description"><?= $escaper->escapeHtml(__('Phone Number')) ?></th>
                 <th scope="col" class="col item"><?= $escaper->escapeHtml(__('Product Name')) ?></th>
                 <th scope="col" class="col description"><?= $escaper->escapeHtml(__('Message')) ?></th>
+                <th scope="col" class="col description"><?= $escaper->escapeHtml(__('Message by seller')) ?></th>
                 <th scope="col" class="col actions">&nbsp;</th>
             </tr>
             </thead>
@@ -50,6 +51,9 @@ use Nvm\Wholesale\Block\Customer\Wholesale\ListProduct;
                     </td>
                     <td data-th="<?= $escaper->escapeHtmlAttr(__('Message')) ?>" class="col description">
                         <?= $wholesale->getCustomerMessage() ?>
+                    </td>
+                    <td data-th="<?= $escaper->escapeHtmlAttr(__('Message by seller ')) ?>" class="col description">
+                        <?= $wholesale->getAdminMess() ?>
                     </td>
                     <td data-th="<?= $escaper->escapeHtmlAttr(__('Actions')) ?>" class="col actions">
                         <a href="<?= $escaper->escapeUrl($block->getWholesaleUrl($wholesale)) ?>" class="action more">

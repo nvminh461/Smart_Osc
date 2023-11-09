@@ -5,14 +5,14 @@ namespace Nvm\Wholesale\Controller\Adminhtml\Contact;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\Auth\Session;
-use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Mail\Template\TransportBuilder;
 use Magento\Framework\Translate\Inline\StateInterface;
 use Nvm\Wholesale\Api\NvmWholesaleRepositoryInterface;
 use Nvm\Wholesale\Model\Contact;
 
-class SendMail extends \Magento\Backend\App\Action implements HttpGetActionInterface
+class SendMail extends Action implements HttpPostActionInterface
 {
     /**
      * @var Contact
@@ -60,7 +60,8 @@ class SendMail extends \Magento\Backend\App\Action implements HttpGetActionInter
         Session                         $backendSession,
         NvmWholesaleRepositoryInterface $nvmWholesale,
         Contact                         $contact
-    ) {
+    )
+    {
         $this->contact = $contact;
         $this->transportBuilder = $transportBuilder;
         $this->inlineTranslation = $inlineTranslation;
@@ -77,6 +78,7 @@ class SendMail extends \Magento\Backend\App\Action implements HttpGetActionInter
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();
+        $postData = $this->getRequest()->getPostValue();
         // 1. Get ID and create model
         $contactId = $this->getRequest()->getParam('contact_id');
         $contactInfo = $this->nvmWholesale->get($contactId);
@@ -106,9 +108,10 @@ class SendMail extends \Magento\Backend\App\Action implements HttpGetActionInter
 
             $this->inlineTranslation->resume();
 
-            $contactInfo->setStatus(1);
             $editorName = $this->backendSession->getUser()->getUserName();
             $contactInfo->setEditor($editorName);
+            $contactInfo->setAdminMess($postData['admin_message']);
+//            $contactInfo->setStatus(1);
             $this->nvmWholesale->save($contactInfo);
 
             $this->messageManager->addSuccess(__('You sent the mail.'));

@@ -23,6 +23,7 @@ interface NvmWholesaleInterface
     const CUSTOMER_MESSAGE = 'customer_message';
     const STATUS = 'status';
     const EDITOR = 'editor';
+    const ADMINMESSAGE = 'admin_message';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -141,6 +142,20 @@ interface NvmWholesaleInterface
      * @return NvmWholesaleInterface
      */
     public function setEditor($editor): NvmWholesaleInterface;
+
+    /**
+     * Get Admin Message
+     *
+     */
+    public function getAdminMess();
+
+    /**
+     * Set Admin Message
+     *
+     * @param string $adminMess
+     * @return NvmWholesaleInterface
+     */
+    public function SetAdminMess($adminMess): NvmWholesaleInterface;
 
     /**
      * Get Created At
